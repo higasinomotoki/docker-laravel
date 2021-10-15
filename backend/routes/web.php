@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HelloController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+// Route::get('/{any}', function () {
+//     return view('app');
+// })->where('any', '.*');
+
+Route::get('/', function () {
     return view('app');
-})->where('any', '.*');
+});
+Route::get('/hello',[HelloController::class,'index']);
+Route::get('/hello_list',[HelloController::class,'list']);
