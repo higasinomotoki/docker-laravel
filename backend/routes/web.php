@@ -14,15 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/{any}', function () {
-//     return view('app');
-// })->where('any', '.*');
-
 Route::get('/', function () {
     return view('app');
 });
-Route::get('/hello', [HelloController::class,'index']);
-Route::get('/hello_list', [HelloController::class,'list']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
